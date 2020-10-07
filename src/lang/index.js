@@ -7,8 +7,8 @@ const lang = {
         humidity: 'Humidity',
         weatherForFiveDays: 'Weather for 5 days',
         weekday: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        eng: 'eng',
-        ru: 'ru',
+        eng: 'english',
+        ru: 'russian',
         searchBtn: 'Search weather by any city',
         errorMessage: 'No results were found for your request, check the entered value or try again',
 
@@ -23,7 +23,7 @@ const lang = {
         eng: 'английский',
         ru: 'русский',
         searchBtn: 'Искать погоду по городу',
-        errorMessage: 'По вашему запросу ничего не найдено, проверьте введенное значение или повторите снова'
+        errorMessage: 'По вашему запросу ничего не найдено, проверьте введенное значение или повторите снова',
     }
 }
 

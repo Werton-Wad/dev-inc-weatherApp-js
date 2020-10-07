@@ -6,7 +6,6 @@ function createItem(elem, language) {
 
     const $time = document.createElement('div');
     $time.textContent = convertDate(new Date(elem.dt_txt), language);
-    // convertDate(new Date(elem.dt));
 
     const $iconWrapper = document.createElement('div');
     const $icon = document.createElement('img');

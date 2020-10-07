@@ -33,6 +33,13 @@ function setSearchValue(value) {
 function getSearchValue() {
     return weatherModel.getSearchValue();
 }
+function getWeatherByDayOfWeek(day) {
+    const weatherList = weatherModel.getWeatherList().weatherList;
+    const weatherForDayList = weatherList.filter(el => new Date(el.dt_txt).getDay() === day);
+    return weatherForDayList;
+}
+
+
 export const actions = {
     getWeather: getWeather,
     getWeatherList: getWeatherList,
@@ -41,4 +48,5 @@ export const actions = {
     setSearchValue: setSearchValue,
     getSearchValue: getSearchValue,
     getLanguage: getLanguage,
+    getWeatherByDayOfWeek: getWeatherByDayOfWeek,
 }

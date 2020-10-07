@@ -4,7 +4,7 @@ import createItem from './different-times';
 import createItemOfFiveDays from './five-days';
 import lang from '../lang';
 
-
+const $wrapper = document.querySelector('.wrapper');
 const $content = document.querySelector('.content');
 const $fiveDaysWrapper = document.createElement('div');
 const $speechBubbleWrapper = document.createElement('div');
@@ -28,6 +28,8 @@ $fiveDaysWrapper.classList.add('five-days');
 const $differentTimeWrapper = document.createElement('div')
 $differentTimeWrapper.classList.add('different-time');
 
+const $differentTimeContainer = document.createElement('div');
+
 
 async function view(language, city) {
   await actions.getWeather(language, city);
@@ -40,7 +42,8 @@ async function view(language, city) {
     $content.append(createCurrentDay(weatherList, city, language));
     renderDifferentTimesList(weatherList, language);
     renderFiveDaysItems(weatherList, language);
-    $content.append($differentTimeWrapper, $btnFiveDays);
+    $differentTimeContainer.append($differentTimeWrapper, $btnFiveDays);
+    $content.append($differentTimeContainer);
     document.body.append($speechBubbleWrapper);
     $btnSearch.textContent = lang[language].searchBtn;
   }
@@ -86,6 +89,9 @@ function renderFiveDaysItems(list, language) {
   $speechBubbleWrapper.innerHTML = '';
   for (let i = 0; i < list.length; i += 8) {
     if (i !== 0) dayCounter += 1;
+    if (dayCounter === lang.eng.weekday.length) {
+      dayCounter = 0;
+    }
     let $createdItem = createItemOfFiveDays(list[i], dayCounter, language);
     $fiveDaysWrapper.append($createdItem);
   }

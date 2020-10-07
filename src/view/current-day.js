@@ -40,7 +40,6 @@ $humidity.textContent = `${lang[language].humidity}: ${list[0].main.humidity} %`
 
 $currentDayWrapper.append($location, $currentDate, $currentTemp, $img, $description, $realFeelTemp, $wind, $pressure, $humidity);
 return $currentDayWrapper;
-
 }
 
 export default createCurrentDay;
